@@ -5,366 +5,922 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>FULL NAME</title>
+  <meta
+    name="description"
+    content="Academic website of FRIEND FULL NAME, PhD Candidate in Economics at UNIVERSITY NAME."
+  >
+
+  <title>FRIEND FULL NAME | Economics</title>
 
   <style>
-    /* =========================
-       GENERAL
-    ========================== */
+
+    /* =========================================================
+       COLOURS / GLOBAL SETTINGS
+    ========================================================= */
+
+    :root {
+      --navy: #17324d;
+      --navy-light: #294f70;
+      --accent: #55766d;
+
+      --text: #202326;
+      --muted: #626970;
+
+      --background: #f7f6f2;
+      --paper: #ffffff;
+      --line: #deddd7;
+
+      --max-width: 1120px;
+    }
+
 
     * {
       box-sizing: border-box;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
 
+
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background: #f8f7f3;
-      color: #252525;
+
+      background: var(--background);
+
+      color: var(--text);
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 17px;
       line-height: 1.65;
     }
 
+
     a {
-      color: #315b63;
+      color: var(--navy-light);
       text-decoration: none;
     }
+
 
     a:hover {
       text-decoration: underline;
     }
 
+
     .container {
-      max-width: 1050px;
+      width: min(var(--max-width), calc(100% - 60px));
       margin: 0 auto;
-      padding: 0 30px;
     }
 
 
-    /* =========================
-       NAVIGATION
-    ========================== */
+    section {
+      scroll-margin-top: 95px;
+    }
 
-    nav {
-      background: #ffffff;
-      border-bottom: 1px solid #ddd;
+
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
+    .navbar {
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
+
+      background: rgba(255, 255, 255, 0.96);
+
+      border-bottom: 1px solid var(--line);
     }
+
 
     .nav-inner {
-      max-width: 1050px;
+      max-width: var(--max-width);
       margin: 0 auto;
+
       padding: 18px 30px;
+
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      gap: 30px;
     }
+
 
     .nav-name {
+      color: var(--navy);
+
+      font-size: 1rem;
       font-weight: bold;
-      font-size: 1.05rem;
-      color: #222;
+      letter-spacing: 0.01em;
     }
+
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      font-size: 0.88rem;
+    }
+
 
     .nav-links a {
-      margin-left: 28px;
-      color: #444;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.92rem;
+      color: #40464b;
     }
 
 
-    /* =========================
-       HOME / PROFILE
-    ========================== */
-
-    #home {
-      padding: 75px 0 65px;
+    .nav-links a:hover {
+      color: var(--navy);
+      text-decoration: none;
     }
 
-    .profile {
+
+
+    /* =========================================================
+       HERO / HOME
+    ========================================================= */
+
+    .hero {
+      padding: 82px 0 76px;
+    }
+
+
+    .hero-grid {
       display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 60px;
+
+      grid-template-columns: 290px 1fr;
+
+      gap: 70px;
+
       align-items: start;
     }
 
-    .profile-photo {
+
+
+    /* PHOTO */
+
+    .photo-card {
       width: 100%;
-      max-width: 260px;
-      border-radius: 4px;
+      max-width: 290px;
+
+      aspect-ratio: 4 / 5;
+
+      background: #e6e5df;
+
+      overflow: hidden;
+
+      border-radius: 3px;
+
+      border: 1px solid #d7d6d0;
+    }
+
+
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
       display: block;
     }
 
-    .profile-text h1 {
-      margin-top: 0;
-      margin-bottom: 8px;
-      font-size: 2.7rem;
-      font-weight: normal;
-      color: #263f45;
+
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+
+      display: none;
+
+      align-items: center;
+      justify-content: center;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      color: #999;
+
+      font-size: 0.85rem;
     }
+
+
+
+    /* INTRODUCTION */
+
+    .intro {
+      padding-top: 4px;
+    }
+
+
+    .eyebrow {
+      margin-bottom: 10px;
+
+      color: var(--accent);
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      font-size: 0.78rem;
+      font-weight: bold;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+    }
+
+
+    .intro h1 {
+      margin: 0 0 8px;
+
+      color: var(--navy);
+
+      font-size: clamp(2.5rem, 5vw, 4rem);
+
+      font-weight: normal;
+
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+    }
+
 
     .position {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 1.05rem;
-      color: #555;
-      margin-bottom: 28px;
+      margin-bottom: 31px;
+
+      color: var(--muted);
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      font-size: 1rem;
+
+      line-height: 1.55;
     }
+
 
     .bio {
-      font-size: 1.08rem;
-      max-width: 680px;
+      max-width: 700px;
+
+      font-size: 1.06rem;
     }
 
-    .info-grid {
-      margin-top: 35px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 35px;
+
+    .bio p:first-child {
+      margin-top: 0;
     }
 
-    .info-box h2 {
-      font-family: Arial, Helvetica, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+
+
+    /* HERO BUTTONS */
+
+    .profile-links {
+      margin-top: 28px;
+
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 10px;
+    }
+
+
+    .button {
+      display: inline-block;
+
+      padding: 8px 15px;
+
+      border: 1px solid #bfc8c5;
+
+      border-radius: 3px;
+
+      color: var(--navy);
+
+      background: rgba(255, 255, 255, 0.55);
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       font-size: 0.82rem;
-      margin-bottom: 10px;
-      color: #315b63;
+
+      transition:
+        background 0.15s ease,
+        border 0.15s ease;
     }
 
-    .info-box p {
-      margin: 4px 0;
+
+    .button:hover {
+      background: white;
+
+      border-color: var(--accent);
+
+      text-decoration: none;
     }
 
 
-    /* =========================
-       SECTIONS
-    ========================== */
-
-    section {
-      scroll-margin-top: 80px;
+    .button.primary {
+      background: var(--navy);
+      color: white;
+      border-color: var(--navy);
     }
 
-    #research {
-      border-top: 1px solid #d8d5cd;
-      padding: 65px 0 90px;
+
+    .button.primary:hover {
+      background: var(--navy-light);
     }
 
-    .section-title {
-      font-size: 2.2rem;
-      font-weight: normal;
-      color: #263f45;
-      margin: 0 0 45px;
+
+
+    /* RESEARCH FIELDS */
+
+    .fields {
+      margin-top: 38px;
+
+      padding-top: 25px;
+
+      border-top: 1px solid var(--line);
     }
 
-    .subsection-title {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 1rem;
+
+    .fields-title {
+      margin-bottom: 8px;
+
+      color: var(--accent);
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      font-size: 0.75rem;
+      font-weight: bold;
+
+      letter-spacing: 0.1em;
+
       text-transform: uppercase;
-      letter-spacing: 0.09em;
-      color: #777;
-      margin-top: 55px;
-      margin-bottom: 25px;
     }
 
 
-    /* =========================
-       PAPERS
-    ========================== */
+    .fields p {
+      margin: 0;
+    }
+
+
+
+    /* =========================================================
+       MAIN CONTENT SECTIONS
+    ========================================================= */
+
+    .main-section {
+      padding: 70px 0;
+
+      border-top: 1px solid var(--line);
+    }
+
+
+    .section-grid {
+      display: grid;
+
+      grid-template-columns: 220px 1fr;
+
+      gap: 55px;
+    }
+
+
+    .section-heading h2 {
+      margin: 0;
+
+      color: var(--navy);
+
+      font-size: 1.65rem;
+      font-weight: normal;
+    }
+
+
+    .section-heading p {
+      margin: 9px 0 0;
+
+      color: var(--muted);
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+
+
+
+    /* =========================================================
+       CV INFORMATION
+    ========================================================= */
+
+    .cv-group {
+      margin-bottom: 40px;
+    }
+
+
+    .cv-group:last-child {
+      margin-bottom: 0;
+    }
+
+
+    .cv-group h3 {
+      margin: 0 0 17px;
+
+      color: var(--accent);
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      font-size: 0.78rem;
+      font-weight: bold;
+
+      letter-spacing: 0.1em;
+
+      text-transform: uppercase;
+    }
+
+
+    .cv-row {
+      display: grid;
+
+      grid-template-columns: 1fr auto;
+
+      gap: 25px;
+
+      padding: 5px 0;
+    }
+
+
+    .cv-row strong {
+      font-weight: normal;
+    }
+
+
+    .cv-year {
+      color: var(--muted);
+
+      white-space: nowrap;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      font-size: 0.82rem;
+    }
+
+
+
+    /* =========================================================
+       RESEARCH PAPERS
+    ========================================================= */
+
+    .research-group {
+      margin-bottom: 55px;
+    }
+
+
+    .research-group:last-child {
+      margin-bottom: 0;
+    }
+
+
+    .research-group-title {
+      margin: 0 0 25px;
+
+      color: var(--accent);
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      font-size: 0.79rem;
+      font-weight: bold;
+
+      letter-spacing: 0.11em;
+
+      text-transform: uppercase;
+    }
+
 
     .paper {
-      margin-bottom: 40px;
-      padding-bottom: 35px;
-      border-bottom: 1px solid #ddd9d0;
+      margin-bottom: 38px;
+
+      padding-bottom: 34px;
+
+      border-bottom: 1px solid var(--line);
     }
+
 
     .paper:last-child {
-      border-bottom: none;
+      margin-bottom: 0;
     }
+
 
     .paper-title {
-      font-size: 1.23rem;
-      line-height: 1.4;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
+
+      color: var(--navy);
+
+      font-size: 1.13rem;
+
+      line-height: 1.45;
     }
 
+
     .paper-title a {
-      color: #263f45;
+      color: var(--navy);
+    }
+
+
+    .paper-authors {
+      margin-bottom: 5px;
+
+      color: #51575c;
+
+      font-size: 0.94rem;
+      font-style: italic;
+    }
+
+
+    .publication {
+      margin-bottom: 9px;
+
+      color: #555d63;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      font-size: 0.84rem;
+    }
+
+
+    .paper-note {
+      margin: 8px 0;
+
+      color: #50575c;
+
+      font-size: 0.93rem;
+    }
+
+
+    .paper-links {
+      margin-top: 10px;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      font-size: 0.82rem;
+    }
+
+
+    .paper-links a {
+      margin-right: 17px;
+
       font-weight: bold;
     }
 
-    .paper-authors {
-      font-style: italic;
-      color: #555;
-      margin-bottom: 6px;
-    }
-
-    .paper-status {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #777;
-      font-size: 0.9rem;
-      margin-bottom: 12px;
-    }
-
-    .paper-links {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.9rem;
-      margin: 10px 0;
-    }
-
-    .paper-links a {
-      margin-right: 15px;
-    }
 
 
-    /* =========================
-       ABSTRACT DROPDOWN
-    ========================== */
+    /* ABSTRACT */
 
     details {
-      margin-top: 12px;
+      margin-top: 14px;
     }
+
 
     summary {
       cursor: pointer;
-      color: #315b63;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.9rem;
+
+      width: fit-content;
+
+      color: var(--navy-light);
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      font-size: 0.82rem;
+      font-weight: bold;
     }
+
 
     .abstract {
-      margin-top: 13px;
-      padding-left: 18px;
-      border-left: 3px solid #c8d2d0;
-      color: #444;
-      font-size: 0.98rem;
+      max-width: 760px;
+
+      margin-top: 15px;
+      padding: 4px 0 4px 19px;
+
+      border-left: 2px solid #aebfba;
+
+      color: #444b50;
+
+      font-size: 0.94rem;
+      line-height: 1.7;
     }
 
 
-    /* =========================
+
+    /* =========================================================
+       TEACHING
+    ========================================================= */
+
+    .teaching-item {
+      margin-bottom: 24px;
+    }
+
+
+    .teaching-item:last-child {
+      margin-bottom: 0;
+    }
+
+
+    .teaching-course {
+      color: var(--navy);
+
+      font-size: 1rem;
+    }
+
+
+    .teaching-meta {
+      color: var(--muted);
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      font-size: 0.83rem;
+    }
+
+
+
+    /* =========================================================
        FOOTER
-    ========================== */
+    ========================================================= */
 
     footer {
-      border-top: 1px solid #ddd;
-      padding: 30px;
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.82rem;
-      color: #888;
+      padding: 35px 30px;
+
+      border-top: 1px solid var(--line);
+
       background: #fff;
+
+      color: #7b8185;
+
+      text-align: center;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      font-size: 0.76rem;
     }
 
 
-    /* =========================
+
+    /* =========================================================
        MOBILE
-    ========================== */
+    ========================================================= */
 
-    @media (max-width: 750px) {
+    @media (max-width: 800px) {
 
-      .profile {
-        grid-template-columns: 1fr;
-        gap: 35px;
+      .container {
+        width: min(100% - 36px, var(--max-width));
       }
 
-      .profile-photo {
-        max-width: 220px;
-      }
-
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .profile-text h1 {
-        font-size: 2.2rem;
-      }
 
       .nav-inner {
-        align-items: flex-start;
+        padding: 16px 18px;
+      }
+
+
+      .nav-links {
         gap: 15px;
       }
 
-      .nav-links a {
-        margin-left: 14px;
+
+      .nav-name {
+        display: none;
       }
+
+
+      .nav-inner {
+        justify-content: flex-end;
+      }
+
+
+      .hero {
+        padding: 50px 0;
+      }
+
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+
+      .photo-card {
+        max-width: 220px;
+      }
+
+
+      .intro h1 {
+        font-size: 2.6rem;
+      }
+
+
+      .section-grid {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+      }
+
+
+      .main-section {
+        padding: 50px 0;
+      }
+
+
+      .cv-row {
+        grid-template-columns: 1fr;
+        gap: 2px;
+
+        margin-bottom: 12px;
+      }
+
+    }
+
+
+    @media (max-width: 520px) {
+
+      .nav-links {
+        width: 100%;
+
+        justify-content: space-between;
+
+        gap: 8px;
+
+        font-size: 0.78rem;
+      }
+
+
+      .profile-links {
+        gap: 8px;
+      }
+
     }
 
   </style>
+
 </head>
+
 
 
 <body>
 
-  <!-- =========================
-       NAVIGATION
-  ========================== -->
 
-  <nav>
+  <!-- =======================================================
+       NAVIGATION
+  ======================================================== -->
+
+  <nav class="navbar">
+
     <div class="nav-inner">
 
-      <div class="nav-name">
-        FULL NAME
-      </div>
+      <a class="nav-name" href="#home">
+        FRIEND FULL NAME
+      </a>
+
 
       <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#research">Research</a>
-        <a href="cv.pdf" target="_blank">CV</a>
+
+        <a href="#home">
+          Home
+        </a>
+
+        <a href="#research">
+          Research
+        </a>
+
+        <a href="#about">
+          CV
+        </a>
+
+        <a href="#teaching">
+          Teaching
+        </a>
+
       </div>
 
     </div>
+
   </nav>
 
 
 
-  <!-- =========================
+  <!-- =======================================================
        HOME
-  ========================== -->
+  ======================================================== -->
 
-  <section id="home">
+  <header class="hero" id="home">
 
     <div class="container">
 
-      <div class="profile">
+      <div class="hero-grid">
 
-        <!--
-        Later upload her photograph to GitHub
-        and name the file "photo.jpg"
-        -->
 
-        <div>
+        <!-- PHOTO -->
+
+        <div class="photo-card">
+
           <img
             src="photo.jpg"
-            alt="FULL NAME"
-            class="profile-photo"
+            alt="FRIEND FULL NAME"
+            onerror="
+              this.style.display='none';
+              this.nextElementSibling.style.display='flex';
+            "
           >
+
+          <div class="photo-placeholder">
+            Photo
+          </div>
+
         </div>
 
 
-        <div class="profile-text">
 
-          <h1>FULL NAME</h1>
+        <!-- INTRO -->
+
+        <div class="intro">
+
+          <div class="eyebrow">
+            Economics
+          </div>
+
+
+          <h1>
+            FRIEND FULL NAME
+          </h1>
+
 
           <div class="position">
+
             PhD Candidate in Economics<br>
-            UNIVERSITY NAME
+
+            <a
+              href="UNIVERSITY-WEBSITE-LINK"
+              target="_blank"
+            >
+              UNIVERSITY NAME
+            </a>
+
           </div>
 
 
           <div class="bio">
 
             <p>
-              I am a PhD candidate in Economics at UNIVERSITY NAME.
+              I am a PhD candidate in Economics at
+              UNIVERSITY NAME.
             </p>
 
             <p>
-              My research focuses on RESEARCH AREA ONE,
-              RESEARCH AREA TWO, and RESEARCH AREA THREE.
+              My research focuses on
+              RESEARCH AREA ONE,
+              RESEARCH AREA TWO,
+              and RESEARCH AREA THREE.
             </p>
 
             <p>
@@ -374,43 +930,60 @@
           </div>
 
 
-          <div class="info-grid">
 
-            <div class="info-box">
+          <!-- LINKS -->
 
-              <h2>Research Interests</h2>
+          <div class="profile-links">
 
-              <p>FIELD ONE</p>
-              <p>FIELD TWO</p>
-              <p>FIELD THREE</p>
+            <a
+              class="button primary"
+              href="cv.pdf"
+              target="_blank"
+            >
+              Download CV
+            </a>
 
+
+            <a
+              class="button"
+              href="mailto:EMAIL@UNIVERSITY.CA"
+            >
+              Email
+            </a>
+
+
+            <a
+              class="button"
+              href="GOOGLE-SCHOLAR-LINK"
+              target="_blank"
+            >
+              Google Scholar
+            </a>
+
+
+            <a
+              class="button"
+              href="https://github.com/GITHUBUSERNAME"
+              target="_blank"
+            >
+              GitHub
+            </a>
+
+          </div>
+
+
+
+          <!-- FIELDS -->
+
+          <div class="fields">
+
+            <div class="fields-title">
+              Research Fields
             </div>
 
-
-            <div class="info-box">
-
-              <h2>Contact</h2>
-
-              <p>
-                Email:
-                <a href="mailto:EMAIL@UNIVERSITY.CA">
-                  EMAIL@UNIVERSITY.CA
-                </a>
-              </p>
-
-              <p>
-                <a href="cv.pdf" target="_blank">
-                  Curriculum Vitae
-                </a>
-              </p>
-
-              <p>
-                <a href="https://github.com/GITHUBUSERNAME" target="_blank">
-                  GitHub
-                </a>
-              </p>
-
-            </div>
+            <p>
+              FIELD ONE · FIELD TWO · FIELD THREE
+            </p>
 
           </div>
 
@@ -420,181 +993,156 @@
 
     </div>
 
-  </section>
+  </header>
 
 
 
-  <!-- =========================
-       RESEARCH
-  ========================== -->
+  <!-- =======================================================
+       ABOUT / ACADEMIC CV
+  ======================================================== -->
 
-  <section id="research">
+  <section
+    class="main-section"
+    id="about"
+  >
 
     <div class="container">
 
-      <h1 class="section-title">Research</h1>
+      <div class="section-grid">
 
 
-      <!-- =====================
-           JOB MARKET PAPER
-      ====================== -->
+        <div class="section-heading">
 
-      <h2 class="subsection-title">
-        Job Market Paper
-      </h2>
+          <h2>
+            Academic Profile
+          </h2>
 
-
-      <div class="paper">
-
-        <div class="paper-title">
-
-          <a href="job-market-paper.pdf" target="_blank">
-            TITLE OF JOB MARKET PAPER
-          </a>
+          <p>
+            Education and academic appointments.
+          </p>
 
         </div>
 
 
-        <div class="paper-authors">
-          Solo authored
-        </div>
+
+        <div>
 
 
-        <div class="paper-links">
+          <!-- EMPLOYMENT -->
 
-          <a href="job-market-paper.pdf" target="_blank">
-            Paper
-          </a>
+          <div class="cv-group">
 
-          <a href="slides.pdf" target="_blank">
-            Slides
-          </a>
-
-        </div>
+            <h3>
+              Employment & Affiliations
+            </h3>
 
 
-        <details>
+            <!--
+            Leave this hidden until she has an academic
+            appointment after the PhD.
 
-          <summary>Abstract</summary>
+            Example:
 
-          <div class="abstract">
+            <div class="cv-row">
+              <strong>
+                Assistant Professor of Economics,
+                UNIVERSITY NAME
+              </strong>
 
-            PUT THE JOB MARKET PAPER ABSTRACT HERE.
+              <div class="cv-year">
+                2027–
+              </div>
+            </div>
+            -->
+
+
+            <div class="cv-row">
+
+              <strong>
+                PhD Candidate in Economics,
+                UNIVERSITY NAME
+              </strong>
+
+              <div class="cv-year">
+                PRESENT
+              </div>
+
+            </div>
 
           </div>
 
-        </details>
-
-      </div>
 
 
+          <!-- EDUCATION -->
 
-      <!-- =====================
-           WORKING PAPERS
-      ====================== -->
+          <div class="cv-group">
 
-      <h2 class="subsection-title">
-        Working Papers
-      </h2>
-
-
-      <div class="paper">
-
-        <div class="paper-title">
-          TITLE OF WORKING PAPER
-        </div>
-
-        <div class="paper-authors">
-          with COAUTHOR NAME
-        </div>
-
-        <div class="paper-status">
-          Working paper
-        </div>
-
-        <div class="paper-links">
-
-          <a href="paper2.pdf" target="_blank">
-            Paper
-          </a>
-
-        </div>
-
-        <details>
-
-          <summary>Abstract</summary>
-
-          <div class="abstract">
-
-            PUT THE ABSTRACT HERE.
-
-          </div>
-
-        </details>
-
-      </div>
+            <h3>
+              Education
+            </h3>
 
 
-      <div class="paper">
+            <div class="cv-row">
 
-        <div class="paper-title">
-          TITLE OF SECOND WORKING PAPER
-        </div>
+              <strong>
+                PhD in Economics, UNIVERSITY NAME
+              </strong>
 
-        <div class="paper-authors">
-          with COAUTHOR NAME
-        </div>
+              <div class="cv-year">
+                EXPECTED 2027
+              </div>
 
-        <div class="paper-status">
-          Working paper
-        </div>
+            </div>
 
-        <details>
 
-          <summary>Abstract</summary>
+            <div class="cv-row">
 
-          <div class="abstract">
+              <strong>
+                MA in Economics, UNIVERSITY NAME
+              </strong>
 
-            PUT THE ABSTRACT HERE.
+              <div class="cv-year">
+                YEAR
+              </div>
+
+            </div>
+
+
+            <div class="cv-row">
+
+              <strong>
+                BA in Economics, UNIVERSITY NAME
+              </strong>
+
+              <div class="cv-year">
+                YEAR
+              </div>
+
+            </div>
 
           </div>
 
-        </details>
-
-      </div>
 
 
+          <!-- CONTACT -->
 
-      <!-- =====================
-           WORK IN PROGRESS
-      ====================== -->
+          <div class="cv-group">
 
-      <h2 class="subsection-title">
-        Work in Progress
-      </h2>
+            <h3>
+              Contact
+            </h3>
 
+            <div>
+              <a href="mailto:EMAIL@UNIVERSITY.CA">
+                EMAIL@UNIVERSITY.CA
+              </a>
+            </div>
 
-      <div class="paper">
+          </div>
 
-        <div class="paper-title">
-          TITLE OF PROJECT
-        </div>
-
-        <div class="paper-authors">
-          with COAUTHOR NAME
         </div>
 
       </div>
-
-
-      <div class="paper">
-
-        <div class="paper-title">
-          TITLE OF ANOTHER PROJECT
-        </div>
-
-      </div>
-
 
     </div>
 
@@ -602,16 +1150,422 @@
 
 
 
-  <!-- =========================
+  <!-- =======================================================
+       RESEARCH
+  ======================================================== -->
+
+  <section
+    class="main-section"
+    id="research"
+  >
+
+    <div class="container">
+
+      <div class="section-grid">
+
+
+        <div class="section-heading">
+
+          <h2>
+            Research
+          </h2>
+
+          <p>
+            Publications, working papers, and ongoing research.
+          </p>
+
+        </div>
+
+
+
+        <div>
+
+
+
+          <!-- =================================================
+               JOB MARKET PAPER
+          ================================================== -->
+
+          <div class="research-group">
+
+            <h3 class="research-group-title">
+              Job Market Paper
+            </h3>
+
+
+            <article class="paper">
+
+              <div class="paper-title">
+
+                <a
+                  href="job-market-paper.pdf"
+                  target="_blank"
+                >
+                  TITLE OF JOB MARKET PAPER
+                </a>
+
+              </div>
+
+
+              <div class="paper-authors">
+                Solo authored
+              </div>
+
+
+              <div class="paper-note">
+                Optional one-sentence description of the paper
+                or current status.
+              </div>
+
+
+              <div class="paper-links">
+
+                <a
+                  href="job-market-paper.pdf"
+                  target="_blank"
+                >
+                  Paper
+                </a>
+
+
+                <a
+                  href="slides.pdf"
+                  target="_blank"
+                >
+                  Slides
+                </a>
+
+              </div>
+
+
+              <details>
+
+                <summary>
+                  Abstract
+                </summary>
+
+
+                <div class="abstract">
+
+                  PUT THE FULL JOB MARKET PAPER ABSTRACT HERE.
+
+                </div>
+
+              </details>
+
+            </article>
+
+          </div>
+
+
+
+          <!-- =================================================
+               PUBLICATIONS
+          ================================================== -->
+
+          <div class="research-group">
+
+            <h3 class="research-group-title">
+              Publications & Forthcoming
+            </h3>
+
+
+            <!--
+            When she gets publications, copy the paper block
+            below and replace the placeholders.
+
+            Example:
+            -->
+
+
+            <article class="paper">
+
+              <div class="paper-title">
+                TITLE OF PUBLISHED PAPER
+              </div>
+
+
+              <div class="paper-authors">
+                with COAUTHOR NAME
+              </div>
+
+
+              <div class="publication">
+                JOURNAL NAME, YEAR
+              </div>
+
+
+              <div class="paper-links">
+
+                <a
+                  href="PUBLISHED-PAPER-LINK"
+                  target="_blank"
+                >
+                  Published Version
+                </a>
+
+
+                <a
+                  href="paper-publication.pdf"
+                  target="_blank"
+                >
+                  Working Paper
+                </a>
+
+              </div>
+
+            </article>
+
+          </div>
+
+
+
+          <!-- =================================================
+               WORKING PAPERS
+          ================================================== -->
+
+          <div class="research-group">
+
+            <h3 class="research-group-title">
+              Working Papers
+            </h3>
+
+
+
+            <!-- PAPER 1 -->
+
+            <article class="paper">
+
+              <div class="paper-title">
+                TITLE OF WORKING PAPER
+              </div>
+
+
+              <div class="paper-authors">
+                with COAUTHOR NAME
+              </div>
+
+
+              <div class="paper-note">
+                OPTIONAL STATUS OR SHORT NOTE
+              </div>
+
+
+              <div class="paper-links">
+
+                <a
+                  href="paper2.pdf"
+                  target="_blank"
+                >
+                  Paper
+                </a>
+
+              </div>
+
+
+              <details>
+
+                <summary>
+                  Abstract
+                </summary>
+
+
+                <div class="abstract">
+
+                  PUT ABSTRACT HERE.
+
+                </div>
+
+              </details>
+
+            </article>
+
+
+
+            <!-- PAPER 2 -->
+
+            <article class="paper">
+
+              <div class="paper-title">
+                TITLE OF SECOND WORKING PAPER
+              </div>
+
+
+              <div class="paper-authors">
+                with COAUTHOR NAME
+              </div>
+
+
+              <div class="paper-links">
+
+                <a
+                  href="paper3.pdf"
+                  target="_blank"
+                >
+                  Paper
+                </a>
+
+              </div>
+
+
+              <details>
+
+                <summary>
+                  Abstract
+                </summary>
+
+
+                <div class="abstract">
+
+                  PUT ABSTRACT HERE.
+
+                </div>
+
+              </details>
+
+            </article>
+
+          </div>
+
+
+
+          <!-- =================================================
+               WORK IN PROGRESS
+          ================================================== -->
+
+          <div class="research-group">
+
+            <h3 class="research-group-title">
+              Work in Progress
+            </h3>
+
+
+
+            <article class="paper">
+
+              <div class="paper-title">
+                TITLE OF PROJECT
+              </div>
+
+
+              <div class="paper-authors">
+                with COAUTHOR NAME
+              </div>
+
+
+              <div class="paper-note">
+                Brief project description, if desired.
+              </div>
+
+            </article>
+
+
+
+            <article class="paper">
+
+              <div class="paper-title">
+                TITLE OF SECOND PROJECT
+              </div>
+
+
+              <div class="paper-authors">
+                with COAUTHOR NAME
+              </div>
+
+            </article>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       TEACHING
+  ======================================================== -->
+
+  <section
+    class="main-section"
+    id="teaching"
+  >
+
+    <div class="container">
+
+      <div class="section-grid">
+
+
+        <div class="section-heading">
+
+          <h2>
+            Teaching
+          </h2>
+
+          <p>
+            Selected teaching experience.
+          </p>
+
+        </div>
+
+
+
+        <div>
+
+
+          <div class="teaching-item">
+
+            <div class="teaching-course">
+              COURSE NAME
+            </div>
+
+            <div class="teaching-meta">
+              Instructor · UNIVERSITY NAME · TERM YEAR
+            </div>
+
+          </div>
+
+
+
+          <div class="teaching-item">
+
+            <div class="teaching-course">
+              COURSE NAME
+            </div>
+
+            <div class="teaching-meta">
+              Teaching Assistant · UNIVERSITY NAME · TERM YEAR
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
        FOOTER
-  ========================== -->
+  ======================================================== -->
 
   <footer>
 
-    © 2026 FULL NAME
+    © 2026 FRIEND FULL NAME
 
   </footer>
 
 
 </body>
+
 </html>
