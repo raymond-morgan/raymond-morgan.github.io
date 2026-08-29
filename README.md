@@ -1,2 +1,2 @@
-# r-j-morgan.github.io
+# raymond-morgan.github.io
 Personal academic website
