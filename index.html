@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>FULL NAME</title>
@@ -13,6 +15,7 @@
   >
 
   <style>
+
     * {
       box-sizing: border-box;
     }
@@ -20,14 +23,19 @@
     body {
       margin: 0;
       background: #ffffff;
-      color: #202020;
-      font-family: Arial, Helvetica, sans-serif;
+      color: #222222;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       font-size: 16px;
-      line-height: 1.22;
+      line-height: 1.4;
     }
 
     a {
-      color: #274f68;
+      color: #285978;
       text-decoration: none;
     }
 
@@ -36,360 +44,470 @@
     }
 
     .page {
-      max-width: 1180px;
-      margin: 44px auto 80px;
-      padding: 0 36px;
-
-      display: grid;
-      grid-template-columns: 280px minmax(0, 780px);
-      column-gap: 64px;
-      align-items: start;
+      max-width: 860px;
+      margin: 64px auto 90px;
+      padding: 0 30px;
     }
 
-    .sidebar img {
-      width: 100%;
-      max-width: 280px;
-      height: auto;
-      display: block;
-      margin-bottom: 17px;
+    header {
+      margin-bottom: 46px;
     }
 
-    .photo-placeholder {
-      width: 280px;
-      max-width: 100%;
-      aspect-ratio: 1 / 1;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 17px;
-      background: #f1f1f1;
-      color: #999;
-      font-size: 14px;
-    }
-
-    .name {
-      margin: 0 0 17px;
-      font-size: 17px;
-      font-weight: normal;
+    h1 {
+      margin: 0 0 7px;
+      font-size: 30px;
+      line-height: 1.2;
+      font-weight: 500;
     }
 
     .position {
-      margin: 0 0 18px;
+      margin-bottom: 18px;
+      color: #555555;
     }
 
-    .sidebar-link {
-      margin: 0 0 17px;
+    .top-links {
+      margin-bottom: 29px;
     }
 
-    .sidebar-email {
-      margin: 0;
-    }
-
-    .main {
-      max-width: 780px;
+    .top-links a {
+      margin-right: 6px;
     }
 
     .intro {
-      margin-bottom: 32px;
+      max-width: 770px;
     }
 
     .intro p {
-      margin: 0 0 18px;
+      margin: 0 0 15px;
     }
 
     h2 {
-      margin: 34px 0 20px;
-      font-size: 21px;
-      line-height: 1.2;
+      margin: 40px 0 19px;
+      font-size: 20px;
+      line-height: 1.25;
+      font-weight: 600;
     }
 
     .paper {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
     .paper-title {
-      font-weight: bold;
+      font-weight: 600;
+      line-height: 1.4;
     }
 
     .authors {
-      margin-top: 1px;
+      margin-top: 2px;
+      color: #444444;
     }
 
     .links {
-      margin-top: 1px;
+      margin-top: 3px;
+      font-size: 15px;
     }
 
     .status {
-      margin-top: 2px;
-      color: #526f2e;
+      margin-top: 3px;
+      color: #666666;
       font-style: italic;
-    }
-
-    .abstract {
-      display: none;
-      margin: 12px 0 8px;
-      line-height: 1.35;
-      max-width: 760px;
+      font-size: 15px;
     }
 
     .abstract-link {
+      color: #285978;
       cursor: pointer;
-      color: #274f68;
     }
 
     .abstract-link:hover {
       text-decoration: underline;
     }
 
-    footer {
+    .abstract {
       display: none;
+      max-width: 800px;
+      margin-top: 11px;
+      color: #333333;
+      line-height: 1.5;
+      font-size: 15px;
     }
 
-    @media (max-width: 800px) {
+    .teaching-item {
+      margin-bottom: 16px;
+    }
+
+    .teaching-title {
+      font-weight: 600;
+    }
+
+    .teaching-info {
+      margin-top: 2px;
+      color: #555555;
+      font-size: 15px;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding-top: 16px;
+      border-top: 1px solid #eeeeee;
+      color: #999999;
+      font-size: 12px;
+    }
+
+    @media (max-width: 700px) {
+
       .page {
-        display: block;
-        margin-top: 28px;
-        padding: 0 24px;
+        margin-top: 38px;
+        padding: 0 22px;
       }
 
-      .sidebar {
-        margin-bottom: 42px;
+      h1 {
+        font-size: 27px;
       }
 
-      .sidebar img,
-      .photo-placeholder {
-        width: 220px;
+      header {
+        margin-bottom: 38px;
       }
 
-      .main {
-        max-width: none;
+      h2 {
+        margin-top: 34px;
       }
+
     }
+
   </style>
+
 </head>
 
 
 <body>
 
-  <div class="page">
+<div class="page">
 
-    <aside class="sidebar">
 
-      <img
-        src="photo.jpg"
-        alt="FULL NAME"
-        onerror="
-          this.style.display='none';
-          this.nextElementSibling.style.display='flex';
-        "
+  <header>
+
+    <h1>
+      FULL NAME
+    </h1>
+
+
+    <div class="position">
+      PhD Candidate in Economics<br>
+      UNIVERSITY NAME
+    </div>
+
+
+    <div class="top-links">
+
+      <a href="cv.pdf" target="_blank">
+        CV
+      </a>
+
+      &nbsp;|&nbsp;
+
+      <a href="mailto:EMAIL@UNIVERSITY.CA">
+        Email
+      </a>
+
+      &nbsp;|&nbsp;
+
+      <a href="GOOGLE-SCHOLAR-LINK" target="_blank">
+        Google Scholar
+      </a>
+
+    </div>
+
+
+    <div class="intro">
+
+      <p>
+        I am a PhD candidate in Economics at UNIVERSITY NAME.
+        My research focuses on FIELD ONE.
+      </p>
+
+      <p>
+        I am on the 2026–2027 academic job market.
+      </p>
+
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+
+    <h2>
+      Job Market Paper
+    </h2>
+
+
+    <div class="paper">
+
+      <div class="paper-title">
+        TITLE OF JOB MARKET PAPER, 2026
+      </div>
+
+      <div class="links">
+
+        <a
+          href="job-market-paper.pdf"
+          target="_blank"
+        >
+          PDF
+        </a>
+
+        &nbsp;|&nbsp;
+
+        <span
+          class="abstract-link"
+          onclick="toggleAbstract('jmp-abstract')"
+        >
+          Abstract
+        </span>
+
+      </div>
+
+      <div
+        class="abstract"
+        id="jmp-abstract"
       >
-
-      <div class="photo-placeholder">
-        Photo
+        PUT THE JOB MARKET PAPER ABSTRACT HERE.
       </div>
 
-      <p class="name">
-        FULL NAME
-      </p>
+    </div>
 
-      <p class="position">
-        PhD Candidate in Economics<br>
-        UNIVERSITY NAME
-      </p>
 
-      <p class="sidebar-link">
-        <a href="cv.pdf" target="_blank">
-          CV
+
+    <h2>
+      Working Papers
+    </h2>
+
+
+    <div class="paper">
+
+      <div class="paper-title">
+        TITLE OF WORKING PAPER, 2026
+      </div>
+
+      <div class="authors">
+        with COAUTHOR NAME
+      </div>
+
+      <div class="links">
+
+        <a
+          href="paper2.pdf"
+          target="_blank"
+        >
+          PDF
         </a>
-      </p>
 
-      <p class="sidebar-email">
-        <a href="mailto:EMAIL@UNIVERSITY.CA">
-          EMAIL@UNIVERSITY.CA
+        &nbsp;|&nbsp;
+
+        <span
+          class="abstract-link"
+          onclick="toggleAbstract('paper2-abstract')"
+        >
+          Abstract
+        </span>
+
+      </div>
+
+      <div class="status">
+        OPTIONAL STATUS, JOURNAL NAME
+      </div>
+
+      <div
+        class="abstract"
+        id="paper2-abstract"
+      >
+        PUT ABSTRACT HERE.
+      </div>
+
+    </div>
+
+
+
+    <div class="paper">
+
+      <div class="paper-title">
+        TITLE OF SECOND WORKING PAPER, 2025
+      </div>
+
+      <div class="authors">
+        with COAUTHOR NAME
+      </div>
+
+      <div class="links">
+
+        <a
+          href="paper3.pdf"
+          target="_blank"
+        >
+          PDF
         </a>
-      </p>
 
-    </aside>
+        &nbsp;|&nbsp;
 
-
-    <main class="main">
-
-      <div class="intro">
-
-        <p>
-          Welcome to my website! I am a PhD candidate in Economics at
-          UNIVERSITY NAME.
-        </p>
-
-        <p>
-          My research focuses on FIELD ONE.
-          I am on the 2026–2027 academic job market.
-        </p>
+        <span
+          class="abstract-link"
+          onclick="toggleAbstract('paper3-abstract')"
+        >
+          Abstract
+        </span>
 
       </div>
 
+      <div
+        class="abstract"
+        id="paper3-abstract"
+      >
+        PUT ABSTRACT HERE.
+      </div>
 
-      <h2>Job Market Paper</h2>
+    </div>
 
-      <div class="paper">
 
-        <div class="paper-title">
-          TITLE OF JOB MARKET PAPER, 2026
-        </div>
 
-        <div class="links">
-          <a href="job-market-paper.pdf" target="_blank">PDF</a>
-          |
-          <span
-            class="abstract-link"
-            onclick="toggleAbstract('jmp-abstract')"
-          >
-            Abstract
-          </span>
-        </div>
+    <h2>
+      Work in Progress
+    </h2>
 
-        <div class="abstract" id="jmp-abstract">
-          PUT THE JOB MARKET PAPER ABSTRACT HERE.
-        </div>
+
+    <div class="paper">
+
+      <div class="paper-title">
+        TITLE OF PROJECT
+      </div>
+
+      <div class="authors">
+        with COAUTHOR NAME
+      </div>
+
+    </div>
+
+
+    <div class="paper">
+
+      <div class="paper-title">
+        TITLE OF SECOND PROJECT
+      </div>
+
+    </div>
+
+
+
+    <h2>
+      Publications
+    </h2>
+
+
+    <div class="paper">
+
+      <div class="paper-title">
+        TITLE OF PUBLISHED PAPER, YEAR
+      </div>
+
+      <div class="authors">
+        with COAUTHOR NAME
+      </div>
+
+      <div class="links">
+
+        <a
+          href="publication.pdf"
+          target="_blank"
+        >
+          PDF
+        </a>
+
+        &nbsp;|&nbsp;
+
+        <span
+          class="abstract-link"
+          onclick="toggleAbstract('publication-abstract')"
+        >
+          Abstract
+        </span>
 
       </div>
 
-
-      <h2>Working Papers</h2>
-
-      <div class="paper">
-
-        <div class="paper-title">
-          TITLE OF WORKING PAPER, 2026
-        </div>
-
-        <div class="authors">
-          (with COAUTHOR NAME)
-        </div>
-
-        <div class="links">
-          <a href="paper2.pdf" target="_blank">PDF</a>
-          |
-          <span
-            class="abstract-link"
-            onclick="toggleAbstract('paper2-abstract')"
-          >
-            Abstract
-          </span>
-        </div>
-
-        <div class="status">
-          OPTIONAL STATUS, JOURNAL NAME
-        </div>
-
-        <div class="abstract" id="paper2-abstract">
-          PUT ABSTRACT HERE.
-        </div>
-
+      <div class="status">
+        JOURNAL NAME
       </div>
 
-
-      <div class="paper">
-
-        <div class="paper-title">
-          TITLE OF SECOND WORKING PAPER, 2025
-        </div>
-
-        <div class="authors">
-          (with COAUTHOR NAME)
-        </div>
-
-        <div class="links">
-          <a href="paper3.pdf" target="_blank">PDF</a>
-          |
-          <span
-            class="abstract-link"
-            onclick="toggleAbstract('paper3-abstract')"
-          >
-            Abstract
-          </span>
-        </div>
-
-        <div class="abstract" id="paper3-abstract">
-          PUT ABSTRACT HERE.
-        </div>
-
+      <div
+        class="abstract"
+        id="publication-abstract"
+      >
+        PUT ABSTRACT HERE.
       </div>
 
+    </div>
 
-      <h2>Work in Progress</h2>
 
-      <div class="paper">
 
-        <div class="paper-title">
-          TITLE OF PROJECT
-        </div>
+    <h2>
+      Teaching
+    </h2>
 
-        <div class="authors">
-          (with COAUTHOR NAME)
-        </div>
 
+    <div class="teaching-item">
+
+      <div class="teaching-title">
+        COURSE NAME
       </div>
 
-
-      <div class="paper">
-
-        <div class="paper-title">
-          TITLE OF SECOND PROJECT
-        </div>
-
+      <div class="teaching-info">
+        Instructor, UNIVERSITY NAME, TERM YEAR
       </div>
 
+    </div>
 
-      <h2>Publications</h2>
 
-      <div class="paper">
+    <div class="teaching-item">
 
-        <div class="paper-title">
-          TITLE OF PUBLISHED PAPER, YEAR
-        </div>
-
-        <div class="authors">
-          (with COAUTHOR NAME)
-        </div>
-
-        <div class="links">
-          <a href="publication.pdf" target="_blank">PDF</a>
-          |
-          <span
-            class="abstract-link"
-            onclick="toggleAbstract('publication-abstract')"
-          >
-            Abstract
-          </span>
-        </div>
-
-        <div class="status">
-          JOURNAL NAME
-        </div>
-
-        <div class="abstract" id="publication-abstract">
-          PUT ABSTRACT HERE.
-        </div>
-
+      <div class="teaching-title">
+        COURSE NAME
       </div>
 
-    </main>
+      <div class="teaching-info">
+        Teaching Assistant, UNIVERSITY NAME, TERM YEAR
+      </div>
 
-  </div>
+    </div>
 
 
-  <script>
-    function toggleAbstract(id) {
-      const abstract = document.getElementById(id);
+  </main>
 
-      if (abstract.style.display === "block") {
-        abstract.style.display = "none";
-      } else {
-        abstract.style.display = "block";
-      }
+
+  <footer>
+    © 2026 FULL NAME
+  </footer>
+
+
+</div>
+
+
+<script>
+
+  function toggleAbstract(id) {
+
+    const abstract = document.getElementById(id);
+
+    if (abstract.style.display === "block") {
+      abstract.style.display = "none";
+    } else {
+      abstract.style.display = "block";
     }
-  </script>
+
+  }
+
+</script>
+
 
 </body>
 
