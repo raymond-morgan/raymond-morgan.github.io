@@ -17,344 +17,245 @@
     :root {
       --text: #252525;
       --secondary: #555555;
-
-      /* Main academic blue */
       --navy: #244f68;
-
-      /* Links */
       --link: #3d718d;
-
-      /* Very subtle blue-grey */
-      --line: #d8e0e4;
-
+      --line: #c9d8df;
+      --light-line: #e8edef;
       --light-text: #777777;
     }
-
 
     * {
       box-sizing: border-box;
     }
 
-
     html {
       scroll-behavior: smooth;
     }
 
-
     body {
       margin: 0;
-
       background: #ffffff;
-
       color: var(--text);
-
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 16px;
       line-height: 1.5;
     }
-
 
     a {
       color: var(--link);
       text-decoration: none;
     }
 
-
     a:hover {
       text-decoration: underline;
     }
 
-
     .page {
       max-width: 860px;
       margin: 0 auto;
-
-      padding:
-        68px
-        32px
-        90px;
+      padding: 68px 32px 90px;
     }
 
-
-
-    /* ======================================================
-       INTRODUCTION
-    ====================================================== */
+    /* INTRO */
 
     header {
       max-width: 760px;
-
-      margin-bottom: 38px;
-
-      padding-bottom: 32px;
-
-      border-bottom: 1px solid var(--line);
+      margin-bottom: 42px;
     }
 
-
     h1 {
-      margin:
-        0
-        0
-        7px;
-
+      margin: 0 0 7px;
       color: var(--navy);
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
+      font-family: Georgia, "Times New Roman", serif;
       font-size: 36px;
-
       line-height: 1.15;
-
       font-weight: normal;
     }
 
-
     .position {
       margin-bottom: 14px;
-
       color: var(--secondary);
-
       line-height: 1.45;
     }
 
-
     .top-links {
       margin-bottom: 27px;
-
       font-size: 15px;
     }
 
-
     .separator {
       margin: 0 8px;
-
       color: #a9b3b8;
     }
-
 
     .intro {
       max-width: 720px;
     }
 
-
     .intro p {
-      margin:
-        0
-        0
-        13px;
+      margin: 0 0 13px;
     }
-
 
     .intro p:last-child {
       margin-bottom: 0;
     }
 
-
-
-    /* ======================================================
-       RESEARCH
-    ====================================================== */
+    /* RESEARCH */
 
     .research {
       max-width: 790px;
     }
 
-
-    h2 {
-      margin:
-        39px
-        0
-        18px;
-
-      color: var(--navy);
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      font-size: 22px;
-
-      line-height: 1.25;
-
-      font-weight: normal;
+    .section-heading {
+      margin: 40px 0 19px;
     }
 
-
-    h2:first-child {
+    .section-heading:first-child {
       margin-top: 0;
     }
 
+    h2 {
+      margin: 0;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 22px;
+      line-height: 1.25;
+      font-weight: normal;
+    }
 
+    .heading-line {
+      width: 100%;
+      height: 1px;
+      margin-top: 7px;
+      background: var(--line);
+    }
 
-    /* ======================================================
-       PAPERS
-    ====================================================== */
+    /* PAPERS */
 
     .paper {
-      margin-bottom: 25px;
+      margin-bottom: 26px;
     }
-
-
-    .paper-title {
-      color: #292929;
-
-      font-weight: 600;
-
-      line-height: 1.45;
-    }
-
-
-    .authors {
-      margin-top: 2px;
-
-      color: var(--secondary);
-
-      font-size: 15px;
-    }
-
-
-    .status {
-      margin-top: 2px;
-
-      color: var(--light-text);
-
-      font-size: 14.5px;
-
-      font-style: italic;
-    }
-
 
     .paper + .paper {
       margin-top: 5px;
     }
 
+    .paper-title {
+      color: #292929;
+      font-weight: 600;
+      line-height: 1.45;
+    }
 
+    .authors {
+      margin-top: 2px;
+      color: var(--secondary);
+      font-size: 15px;
+    }
 
-    /* ======================================================
-       ABSTRACT DROPDOWN
-    ====================================================== */
+    .status {
+      margin-top: 2px;
+      color: var(--light-text);
+      font-size: 14.5px;
+      font-style: italic;
+    }
+
+    /* ABSTRACT */
 
     details {
-      margin-top: 5px;
+      margin-top: 7px;
     }
-
 
     summary {
-      display: inline-block;
-
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
       cursor: pointer;
-
       color: var(--link);
-
-      font-size: 14.5px;
-
+      font-size: 14px;
       list-style: none;
     }
-
 
     summary::-webkit-details-marker {
       display: none;
     }
 
-
     summary:hover {
-      text-decoration: underline;
+      text-decoration: none;
     }
 
-
-    summary::after {
-      content: " +";
-
-      color: #8a9ba4;
+    summary::before {
+      content: "+";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 17px;
+      height: 17px;
+      border: 1px solid #9bb1bc;
+      border-radius: 2px;
+      color: var(--navy);
+      font-size: 13px;
+      line-height: 1;
     }
 
-
-    details[open] summary::after {
-      content: " −";
+    details[open] summary::before {
+      content: "−";
     }
 
+    summary span {
+      border-bottom: 1px solid transparent;
+    }
+
+    summary:hover span {
+      border-bottom-color: var(--link);
+    }
 
     .abstract {
       max-width: 740px;
-
       margin-top: 11px;
-
-      padding-left: 15px;
-
+      padding: 11px 0 2px 15px;
       border-left: 2px solid #afc3cd;
-
       color: #444444;
-
       font-size: 14.5px;
-
       line-height: 1.58;
     }
 
-
-
-    /* ======================================================
-       FOOTER
-    ====================================================== */
+    /* FOOTER */
 
     footer {
       margin-top: 58px;
-
       padding-top: 14px;
-
-      border-top: 1px solid #eeeeee;
-
+      border-top: 1px solid var(--light-line);
       color: #999999;
-
       font-size: 12px;
     }
 
-
-
-    /* ======================================================
-       MOBILE
-    ====================================================== */
+    /* MOBILE */
 
     @media (max-width: 700px) {
 
       .page {
-        padding:
-          42px
-          22px
-          65px;
+        padding: 42px 22px 65px;
       }
-
 
       h1 {
         font-size: 30px;
       }
 
-
       header {
-        margin-bottom: 33px;
-
-        padding-bottom: 27px;
+        margin-bottom: 35px;
       }
 
+      .section-heading {
+        margin-top: 34px;
+      }
 
       h2 {
-        margin-top: 33px;
-
         font-size: 21px;
       }
 
     }
 
   </style>
-
 </head>
 
 
@@ -362,39 +263,28 @@
 
 <div class="page">
 
-
   <header>
 
-    <h1>
-      FULL NAME
-    </h1>
-
+    <h1>FULL NAME</h1>
 
     <div class="position">
       PhD Candidate in Economics<br>
       UNIVERSITY NAME
     </div>
 
-
     <div class="top-links">
 
-      <a
-        href="cv.pdf"
-        target="_blank"
-      >
+      <a href="cv.pdf" target="_blank">
         CV
       </a>
 
-      <span class="separator">
-        |
-      </span>
+      <span class="separator">|</span>
 
       <a href="mailto:EMAIL@UNIVERSITY.CA">
         EMAIL@UNIVERSITY.CA
       </a>
 
     </div>
-
 
     <div class="intro">
 
@@ -412,16 +302,12 @@
   </header>
 
 
-
   <main class="research">
 
-
-    <!-- JOB MARKET PAPER -->
-
-    <h2>
-      Job Market Paper
-    </h2>
-
+    <div class="section-heading">
+      <h2>Job Market Paper</h2>
+      <div class="heading-line"></div>
+    </div>
 
     <div class="paper">
 
@@ -429,11 +315,10 @@
         TITLE OF JOB MARKET PAPER, 2026
       </div>
 
-
       <details>
 
         <summary>
-          Abstract
+          <span>Abstract</span>
         </summary>
 
         <div class="abstract">
@@ -445,13 +330,10 @@
     </div>
 
 
-
-    <!-- WORKING PAPERS -->
-
-    <h2>
-      Working Papers
-    </h2>
-
+    <div class="section-heading">
+      <h2>Working Papers</h2>
+      <div class="heading-line"></div>
+    </div>
 
     <div class="paper">
 
@@ -466,7 +348,7 @@
       <details>
 
         <summary>
-          Abstract
+          <span>Abstract</span>
         </summary>
 
         <div class="abstract">
@@ -476,7 +358,6 @@
       </details>
 
     </div>
-
 
 
     <div class="paper">
@@ -492,7 +373,7 @@
       <details>
 
         <summary>
-          Abstract
+          <span>Abstract</span>
         </summary>
 
         <div class="abstract">
@@ -504,13 +385,10 @@
     </div>
 
 
-
-    <!-- WORK IN PROGRESS -->
-
-    <h2>
-      Work in Progress
-    </h2>
-
+    <div class="section-heading">
+      <h2>Work in Progress</h2>
+      <div class="heading-line"></div>
+    </div>
 
     <div class="paper">
 
@@ -534,13 +412,10 @@
     </div>
 
 
-
-    <!-- PUBLICATIONS -->
-
-    <h2>
-      Publications
-    </h2>
-
+    <div class="section-heading">
+      <h2>Publications</h2>
+      <div class="heading-line"></div>
+    </div>
 
     <div class="paper">
 
@@ -559,7 +434,7 @@
       <details>
 
         <summary>
-          Abstract
+          <span>Abstract</span>
         </summary>
 
         <div class="abstract">
@@ -570,15 +445,12 @@
 
     </div>
 
-
   </main>
-
 
 
   <footer>
     © 2026 FULL NAME
   </footer>
-
 
 </div>
 
