@@ -17,191 +17,344 @@
     :root {
       --text: #252525;
       --secondary: #555555;
-      --accent: #496b7b;
-      --light: #dddddd;
+
+      /* Main academic blue */
+      --navy: #244f68;
+
+      /* Links */
+      --link: #3d718d;
+
+      /* Very subtle blue-grey */
+      --line: #d8e0e4;
+
+      --light-text: #777777;
     }
+
 
     * {
       box-sizing: border-box;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
 
+
     body {
       margin: 0;
+
       background: #ffffff;
+
       color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       font-size: 16px;
       line-height: 1.5;
     }
 
+
     a {
-      color: var(--accent);
+      color: var(--link);
       text-decoration: none;
     }
+
 
     a:hover {
       text-decoration: underline;
     }
 
+
     .page {
       max-width: 860px;
       margin: 0 auto;
-      padding: 68px 32px 90px;
+
+      padding:
+        68px
+        32px
+        90px;
     }
+
+
+
+    /* ======================================================
+       INTRODUCTION
+    ====================================================== */
 
     header {
       max-width: 760px;
-      margin-bottom: 46px;
+
+      margin-bottom: 38px;
+
+      padding-bottom: 32px;
+
+      border-bottom: 1px solid var(--line);
     }
 
+
     h1 {
-      margin: 0 0 6px;
-      color: #202020;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 34px;
+      margin:
+        0
+        0
+        7px;
+
+      color: var(--navy);
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 36px;
+
       line-height: 1.15;
+
       font-weight: normal;
     }
 
+
     .position {
       margin-bottom: 14px;
+
       color: var(--secondary);
+
       line-height: 1.45;
     }
 
+
     .top-links {
-      margin-bottom: 28px;
+      margin-bottom: 27px;
+
       font-size: 15px;
     }
 
+
     .separator {
       margin: 0 8px;
-      color: #aaaaaa;
+
+      color: #a9b3b8;
     }
+
 
     .intro {
       max-width: 720px;
     }
 
+
     .intro p {
-      margin: 0 0 13px;
+      margin:
+        0
+        0
+        13px;
     }
+
+
+    .intro p:last-child {
+      margin-bottom: 0;
+    }
+
+
+
+    /* ======================================================
+       RESEARCH
+    ====================================================== */
 
     .research {
       max-width: 790px;
     }
 
+
     h2 {
-      margin: 38px 0 18px;
-      color: var(--text);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 21px;
+      margin:
+        39px
+        0
+        18px;
+
+      color: var(--navy);
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 22px;
+
       line-height: 1.25;
+
       font-weight: normal;
     }
+
 
     h2:first-child {
       margin-top: 0;
     }
 
+
+
+    /* ======================================================
+       PAPERS
+    ====================================================== */
+
     .paper {
-      margin-bottom: 24px;
+      margin-bottom: 25px;
     }
 
+
     .paper-title {
+      color: #292929;
+
       font-weight: 600;
+
       line-height: 1.45;
     }
 
+
     .authors {
       margin-top: 2px;
+
       color: var(--secondary);
+
       font-size: 15px;
     }
 
+
     .status {
       margin-top: 2px;
-      color: #666666;
+
+      color: var(--light-text);
+
       font-size: 14.5px;
+
       font-style: italic;
     }
 
-    details {
-      margin-top: 4px;
+
+    .paper + .paper {
+      margin-top: 5px;
     }
+
+
+
+    /* ======================================================
+       ABSTRACT DROPDOWN
+    ====================================================== */
+
+    details {
+      margin-top: 5px;
+    }
+
 
     summary {
       display: inline-block;
+
       cursor: pointer;
-      color: var(--accent);
+
+      color: var(--link);
+
       font-size: 14.5px;
+
       list-style: none;
     }
+
 
     summary::-webkit-details-marker {
       display: none;
     }
 
+
     summary:hover {
       text-decoration: underline;
     }
 
+
     summary::after {
       content: " +";
-      color: #888888;
+
+      color: #8a9ba4;
     }
+
 
     details[open] summary::after {
       content: " −";
     }
 
+
     .abstract {
       max-width: 740px;
-      margin-top: 10px;
-      padding-left: 14px;
-      border-left: 2px solid var(--light);
+
+      margin-top: 11px;
+
+      padding-left: 15px;
+
+      border-left: 2px solid #afc3cd;
+
       color: #444444;
+
       font-size: 14.5px;
-      line-height: 1.55;
+
+      line-height: 1.58;
     }
 
-    .paper + .paper {
-      margin-top: 4px;
-    }
+
+
+    /* ======================================================
+       FOOTER
+    ====================================================== */
 
     footer {
       margin-top: 58px;
+
       padding-top: 14px;
+
       border-top: 1px solid #eeeeee;
+
       color: #999999;
+
       font-size: 12px;
     }
+
+
+
+    /* ======================================================
+       MOBILE
+    ====================================================== */
 
     @media (max-width: 700px) {
 
       .page {
-        padding: 42px 22px 65px;
+        padding:
+          42px
+          22px
+          65px;
       }
+
 
       h1 {
-        font-size: 29px;
+        font-size: 30px;
       }
+
 
       header {
-        margin-bottom: 38px;
+        margin-bottom: 33px;
+
+        padding-bottom: 27px;
       }
 
+
       h2 {
-        margin-top: 32px;
+        margin-top: 33px;
+
+        font-size: 21px;
       }
 
     }
 
   </style>
+
 </head>
 
 
@@ -209,28 +362,39 @@
 
 <div class="page">
 
+
   <header>
 
-    <h1>FULL NAME</h1>
+    <h1>
+      FULL NAME
+    </h1>
+
 
     <div class="position">
       PhD Candidate in Economics<br>
       UNIVERSITY NAME
     </div>
 
+
     <div class="top-links">
 
-      <a href="cv.pdf" target="_blank">
+      <a
+        href="cv.pdf"
+        target="_blank"
+      >
         CV
       </a>
 
-      <span class="separator">|</span>
+      <span class="separator">
+        |
+      </span>
 
       <a href="mailto:EMAIL@UNIVERSITY.CA">
         EMAIL@UNIVERSITY.CA
       </a>
 
     </div>
+
 
     <div class="intro">
 
@@ -248,10 +412,16 @@
   </header>
 
 
+
   <main class="research">
 
 
-    <h2>Job Market Paper</h2>
+    <!-- JOB MARKET PAPER -->
+
+    <h2>
+      Job Market Paper
+    </h2>
+
 
     <div class="paper">
 
@@ -259,9 +429,12 @@
         TITLE OF JOB MARKET PAPER, 2026
       </div>
 
+
       <details>
 
-        <summary>Abstract</summary>
+        <summary>
+          Abstract
+        </summary>
 
         <div class="abstract">
           PUT THE JOB MARKET PAPER ABSTRACT HERE.
@@ -273,7 +446,12 @@
 
 
 
-    <h2>Working Papers</h2>
+    <!-- WORKING PAPERS -->
+
+    <h2>
+      Working Papers
+    </h2>
+
 
     <div class="paper">
 
@@ -287,7 +465,9 @@
 
       <details>
 
-        <summary>Abstract</summary>
+        <summary>
+          Abstract
+        </summary>
 
         <div class="abstract">
           PUT ABSTRACT HERE.
@@ -296,6 +476,7 @@
       </details>
 
     </div>
+
 
 
     <div class="paper">
@@ -310,7 +491,9 @@
 
       <details>
 
-        <summary>Abstract</summary>
+        <summary>
+          Abstract
+        </summary>
 
         <div class="abstract">
           PUT ABSTRACT HERE.
@@ -322,7 +505,12 @@
 
 
 
-    <h2>Work in Progress</h2>
+    <!-- WORK IN PROGRESS -->
+
+    <h2>
+      Work in Progress
+    </h2>
+
 
     <div class="paper">
 
@@ -347,7 +535,12 @@
 
 
 
-    <h2>Publications</h2>
+    <!-- PUBLICATIONS -->
+
+    <h2>
+      Publications
+    </h2>
+
 
     <div class="paper">
 
@@ -365,7 +558,9 @@
 
       <details>
 
-        <summary>Abstract</summary>
+        <summary>
+          Abstract
+        </summary>
 
         <div class="abstract">
           PUT ABSTRACT HERE.
@@ -379,9 +574,11 @@
   </main>
 
 
+
   <footer>
     © 2026 FULL NAME
   </footer>
+
 
 </div>
 
