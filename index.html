@@ -18,17 +18,21 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       background: #ffffff;
-      color: #222222;
+      color: #252525;
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 15.5px;
-      line-height: 1.42;
+      font-size: 16px;
+      line-height: 1.5;
     }
 
     a {
-      color: #24577a;
+      color: #315f7d;
       text-decoration: none;
     }
 
@@ -37,31 +41,39 @@
     }
 
     .page {
-      width: min(800px, calc(100% - 56px));
-      margin-top: 52px;
-      margin-left: clamp(28px, 7vw, 105px);
-      margin-bottom: 80px;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 68px 32px 90px;
     }
 
     header {
-      margin-bottom: 34px;
+      max-width: 760px;
+      margin-bottom: 46px;
     }
 
     h1 {
-      margin: 0 0 5px;
-      font-size: 27px;
-      line-height: 1.2;
-      font-weight: 600;
+      margin: 0 0 6px;
+      color: #202020;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      line-height: 1.15;
+      font-weight: normal;
     }
 
     .position {
-      margin: 0 0 12px;
-      color: #444444;
+      margin-bottom: 14px;
+      color: #555555;
+      line-height: 1.45;
     }
 
     .top-links {
-      margin-bottom: 24px;
+      margin-bottom: 28px;
       font-size: 15px;
+    }
+
+    .separator {
+      margin: 0 8px;
+      color: #aaaaaa;
     }
 
     .intro {
@@ -69,78 +81,115 @@
     }
 
     .intro p {
-      margin: 0 0 12px;
+      margin: 0 0 13px;
+    }
+
+    .research {
+      max-width: 790px;
     }
 
     h2 {
-      margin: 31px 0 15px;
-      font-size: 18px;
+      margin: 38px 0 18px;
+      color: #252525;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 21px;
       line-height: 1.25;
-      font-weight: 600;
+      font-weight: normal;
+    }
+
+    h2:first-child {
+      margin-top: 0;
     }
 
     .paper {
-      margin-bottom: 20px;
-      max-width: 760px;
+      margin-bottom: 24px;
     }
 
     .paper-title {
       font-weight: 600;
-      line-height: 1.4;
+      line-height: 1.45;
     }
 
     .authors {
-      margin-top: 1px;
-      color: #444444;
+      margin-top: 2px;
+      color: #555555;
+      font-size: 15px;
     }
 
     .status {
       margin-top: 2px;
-      color: #555555;
+      color: #666666;
+      font-size: 14.5px;
       font-style: italic;
-      font-size: 14.5px;
     }
 
-    .links {
-      margin-top: 3px;
-      font-size: 14.5px;
+    details {
+      margin-top: 4px;
     }
 
-    .abstract-link {
-      color: #24577a;
+    summary {
+      display: inline-block;
       cursor: pointer;
+      color: #315f7d;
+      font-size: 14.5px;
+      list-style: none;
     }
 
-    .abstract-link:hover {
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary:hover {
       text-decoration: underline;
     }
 
+    summary::after {
+      content: " +";
+      color: #777777;
+    }
+
+    details[open] summary::after {
+      content: " −";
+    }
+
     .abstract {
-      display: none;
-      margin-top: 10px;
       max-width: 740px;
-      color: #333333;
+      margin-top: 10px;
+      padding-left: 14px;
+      border-left: 2px solid #dddddd;
+      color: #444444;
       font-size: 14.5px;
-      line-height: 1.5;
+      line-height: 1.55;
+    }
+
+    .paper + .paper {
+      margin-top: 4px;
+    }
+
+    footer {
+      margin-top: 58px;
+      padding-top: 14px;
+      border-top: 1px solid #eeeeee;
+      color: #999999;
+      font-size: 12px;
     }
 
     @media (max-width: 700px) {
 
       .page {
-        width: auto;
-        margin: 34px 22px 60px;
+        padding: 42px 22px 65px;
       }
 
       h1 {
-        font-size: 25px;
+        font-size: 29px;
       }
 
       header {
-        margin-bottom: 30px;
+        margin-bottom: 38px;
       }
 
       h2 {
-        margin-top: 28px;
+        margin-top: 32px;
       }
 
     }
@@ -168,7 +217,7 @@
         CV
       </a>
 
-      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <span class="separator">|</span>
 
       <a href="mailto:EMAIL@UNIVERSITY.CA">
         Email
@@ -192,7 +241,8 @@
   </header>
 
 
-  <main>
+  <main class="research">
+
 
     <h2>Job Market Paper</h2>
 
@@ -202,25 +252,18 @@
         TITLE OF JOB MARKET PAPER, 2026
       </div>
 
-      <div class="links">
+      <details>
 
-        <span
-          class="abstract-link"
-          onclick="toggleAbstract('jmp-abstract')"
-        >
-          Abstract
-        </span>
+        <summary>Abstract</summary>
 
-      </div>
+        <div class="abstract">
+          PUT THE JOB MARKET PAPER ABSTRACT HERE.
+        </div>
 
-      <div
-        class="abstract"
-        id="jmp-abstract"
-      >
-        PUT THE JOB MARKET PAPER ABSTRACT HERE.
-      </div>
+      </details>
 
     </div>
+
 
 
     <h2>Working Papers</h2>
@@ -235,23 +278,15 @@
         with COAUTHOR NAME
       </div>
 
-      <div class="links">
+      <details>
 
-        <span
-          class="abstract-link"
-          onclick="toggleAbstract('paper2-abstract')"
-        >
-          Abstract
-        </span>
+        <summary>Abstract</summary>
 
-      </div>
+        <div class="abstract">
+          PUT ABSTRACT HERE.
+        </div>
 
-      <div
-        class="abstract"
-        id="paper2-abstract"
-      >
-        PUT ABSTRACT HERE.
-      </div>
+      </details>
 
     </div>
 
@@ -266,25 +301,18 @@
         with COAUTHOR NAME
       </div>
 
-      <div class="links">
+      <details>
 
-        <span
-          class="abstract-link"
-          onclick="toggleAbstract('paper3-abstract')"
-        >
-          Abstract
-        </span>
+        <summary>Abstract</summary>
 
-      </div>
+        <div class="abstract">
+          PUT ABSTRACT HERE.
+        </div>
 
-      <div
-        class="abstract"
-        id="paper3-abstract"
-      >
-        PUT ABSTRACT HERE.
-      </div>
+      </details>
 
     </div>
+
 
 
     <h2>Work in Progress</h2>
@@ -311,6 +339,7 @@
     </div>
 
 
+
     <h2>Publications</h2>
 
     <div class="paper">
@@ -327,46 +356,27 @@
         JOURNAL NAME
       </div>
 
-      <div class="links">
+      <details>
 
-        <span
-          class="abstract-link"
-          onclick="toggleAbstract('publication-abstract')"
-        >
-          Abstract
-        </span>
+        <summary>Abstract</summary>
 
-      </div>
+        <div class="abstract">
+          PUT ABSTRACT HERE.
+        </div>
 
-      <div
-        class="abstract"
-        id="publication-abstract"
-      >
-        PUT ABSTRACT HERE.
-      </div>
+      </details>
 
     </div>
 
+
   </main>
 
+
+  <footer>
+    © 2026 FULL NAME
+  </footer>
+
 </div>
-
-
-<script>
-
-  function toggleAbstract(id) {
-
-    const abstract = document.getElementById(id);
-
-    if (abstract.style.display === "block") {
-      abstract.style.display = "none";
-    } else {
-      abstract.style.display = "block";
-    }
-
-  }
-
-</script>
 
 </body>
 
